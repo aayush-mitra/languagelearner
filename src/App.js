@@ -62,7 +62,7 @@ export class App extends Component {
       )
     }
     return (
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/" exact strict render={
             () => (
@@ -76,7 +76,7 @@ export class App extends Component {
                 }
               </React.Fragment>
             )
-          }/>
+          } />
 
           <Route path="/auth" exact strict render={
             () => (
@@ -87,12 +87,12 @@ export class App extends Component {
                     : <Redirect to="/" />
                 }
               </React.Fragment>
-              )
+            )
           } />
 
           <Route path="/list/:id" exact strict component={
             (props) => (
-              
+
               this.state.token !== '' ? <List userData={this.context.state.userData} setParentToken={this.setParentToken} {...props} />
                 : <Redirect to="/auth" />
             )

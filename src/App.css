@@ -1,38 +1,519 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+:root {
+  --primary-color: #479C30;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #fff;
+  line-height: 1.6;
+  font-family: 'Raleway', sans-serif;
+  
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+h1, h2 {
+  font-weight: 300;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+p {
+  margin: 10px 0;
+}
+/* nav */
+.navbar {
+  background-color: var(--primary-color);
+  color: #fff;
+  height: 10vh;
+  overflow-y: hidden;
+}
+
+.navbar ul {
+  display: flex;
+}
+
+.navbar .link {
+  padding: 10px;
+  margin: 0 5px;
+}
+
+.link:hover {
+  border-bottom: 2px solid #333;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  overflow: auto;
+  padding: 0 40px;
+}
+
+.flex {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* main */
+.main {
+  width: 100%;
+  height: 90vh;
+  background-color: #f6f7fb;
+}
+
+.main .stuff {
+  color: #333;
+  height: 100%;
+  width: 100%;
+  
+}
+
+.stuff div {
+  padding: 10px;
+}
+
+.stuff div h2 {
+  padding: 15px;
+  border-bottom: 1px lightgray solid;
+}
+
+.stuff div a {
+  text-decoration: none;
+  color: #333;
+  width: 100%;
+}
+/* listnav */
+.listnav {
+  height: 100%;
+  flex: 5%;
+  background-color: white;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+  
+}
+
+.listnav li {
+  padding: 10px 15px;
+}
+
+.listnav a:hover{
+  border-bottom: none;
+  
+}
+
+li.active {
+  background-color: lightgray;
+  border: 1px solid black;
+}
+
+.listnav li:hover {
+  background-color: lightgray;
+}
+
+#selectedlist:hover {
+  background-color: transparent;
+}
+/* showcase */
+.showcase {
+  height: 100%;
+  flex: 50%;
+  
+}
+
+.display {
+  margin: 15px;
+  background-color: white;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+  
+}
+
+.flashcards {
+  margin: 3vh auto;
+  width: 80%;
+  
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  display: none;
+}
+
+.flashcards nav {
+  z-index: 2;
+}
+
+.flashcards .card {
+  height: 80%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.4);
+}
+
+.card:hover {
+  cursor: pointer;
+}
+
+.card .front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  transform: rotateX(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card.is-flipped {
+  transform: rotateX(180deg);
+}
+
+@keyframes myanimation {
+  0% {
+    transform: translateY(0%)
+  }
+  50% {
+    transform: translateY(150%)
+  }
+  100% {
+    transform: translateY(0%)
+  }
+}
+
+.card h1 {
+  text-align: center;
+  
+}
+
+.flashcards ul {
+  background-color: white;
+  padding: 10px;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: space-between;
+}
+
+.flashcards ul li {
+  padding: 4px;
+}
+
+.flashcards li:nth-child(1):hover, .flashcards li:nth-child(3):hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+
+/* actionnav */
+.actionnav {
+  background-color: white;
+  height: 100%;
+  flex: 5%;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+}
+
+.actionnav li {
+  padding: 10px 15px;
+}
+
+.actionnav li:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+
+
+#type {
+  margin: 10px;
+  padding: 5px;
+  width: 50%;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  
+}
+
+#type:focus {
+  outline: none;
+}
+
+.question {
+  background-color: white;
+  margin: 3vh auto;
+  width: 80%;
+  align-items: center;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.4);
+  
+}
+
+#question-title {
+  border: none;
+  
+}
+
+.choices {
+  height: 60%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5px;
+  width: 100%;
+}
+
+.choice {
+  border: 1px solid lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.5s;
+}
+
+.choice:hover {
+  cursor: pointer;
+  border: black 1px solid;
+}
+
+.choice.correct {
+  background-color: var(--primary-color);
+}
+
+.choice.incorrect {
+  background-color: rgb(199, 58, 58);
+}
+
+
+.response {
+  width: 100%;
+  display: flex;
+  gap: 5px;
+}
+
+#answer {
+  
+  width: 80%;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  border-radius: 5px;
+  border: 1px solid #333;
+}
+
+#answer:focus {
+  outline: none;
+}
+
+.response button {
+  width: 20%;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.response button:hover {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+#reveal-text {
+  border: none;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#reveal-text.correct {
+  color: var(--primary-color);
+  display: block;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#reveal-text.incorrect {
+  color: rgb(199, 58, 58);
+  display: block;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.quiz {
+  display: none;
+}
+
+
+/* edit */
+.edit {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 20px;
+  
+}
+.cardedit {
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cardedit button {
+  width: 20%;
+  height: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+.editinput {
+  width: 80%;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  line-height: 1.6;
+  border-radius: 5px;
+  border: 1px solid #333;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.editinput:focus {
+  outline-color: var(--primary-color);
 }
+
+.cardedit button:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.new {
+  width: 100%;
+  line-height: 1.6;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.new:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+.edit {
+  display: none;
+}
+
+/* auth */
+.auth-wrapper {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth {
+  width: 633px;
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  box-shadow: 0 0.125px 0.25rem 0 rgba(0, 0, 0, 0.15);
+  padding: 0;
+  background-color: var(--primary-color);
+}
+
+
+
+.label1 {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.label2 {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.label1:hover, .label2:hover {
+  cursor: pointer;
+}
+
+.infoarea {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 16;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+}
+
+.auth-selected {
+  background-color: white;
+}
+
+.infoarea button {
+  width: 80%;
+  height: 30px;
+  background-color: var(--primary-color);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.infoarea button:hover {
+  cursor: pointer;
+  border: 1px solid black;
+}
+

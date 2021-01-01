@@ -11,7 +11,7 @@ export class List extends Component {
     super(props);
     this.state = {
       isLoading: true,
-      view: 'flashcards',
+      view: 'edit',
       listid: this.props.match.params.id,
       user: this.props.userData,
       list: {},

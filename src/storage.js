@@ -6,8 +6,8 @@ export class MyProvider extends Component {
     this.state = {
       token: '',
       userData: {},
-      proxy: 'https://language-learner-am.herokuapp.com/api/',
-      proxy2: 'https://language-learner-am.herokuapp.com/api/'
+      proxy: 'https://language-learner-am.herokuapp.com/',
+      proxy2: 'https://language-learner-am.herokuapp.com/'
     };
   }
 

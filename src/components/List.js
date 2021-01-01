@@ -169,7 +169,7 @@ export class List extends Component {
     const obj = getFromStorage('LanguageLearner');
 
     if (obj && obj.token) {
-      fetch(this.context.state.proxy + 'users/logout')
+      fetch(this.context.state.proxy + 'users/logout?token=' + obj.token)
         .then(res => res.json())
         .then(json => {
           if (json.success) {

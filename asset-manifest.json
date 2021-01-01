@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/languagelearner/static/css/main.a4ede5db.chunk.css",
+    "main.js": "/languagelearner/static/js/main.478638a7.chunk.js",
+    "main.js.map": "/languagelearner/static/js/main.478638a7.chunk.js.map",
+    "runtime-main.js": "/languagelearner/static/js/runtime-main.1677e262.js",
+    "runtime-main.js.map": "/languagelearner/static/js/runtime-main.1677e262.js.map",
+    "static/js/2.c32ab8db.chunk.js": "/languagelearner/static/js/2.c32ab8db.chunk.js",
+    "static/js/2.c32ab8db.chunk.js.map": "/languagelearner/static/js/2.c32ab8db.chunk.js.map",
+    "static/js/3.36922820.chunk.js": "/languagelearner/static/js/3.36922820.chunk.js",
+    "static/js/3.36922820.chunk.js.map": "/languagelearner/static/js/3.36922820.chunk.js.map",
+    "index.html": "/languagelearner/index.html",
+    "static/css/main.a4ede5db.chunk.css.map": "/languagelearner/static/css/main.a4ede5db.chunk.css.map",
+    "static/js/2.c32ab8db.chunk.js.LICENSE.txt": "/languagelearner/static/js/2.c32ab8db.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.1677e262.js",
+    "static/js/2.c32ab8db.chunk.js",
+    "static/css/main.a4ede5db.chunk.css",
+    "static/js/main.478638a7.chunk.js"
+  ]
+}
